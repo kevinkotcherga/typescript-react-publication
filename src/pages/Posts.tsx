@@ -14,7 +14,7 @@ const Posts: React.FC = () => {
 
   // Récupération de la data avec fetch
   useEffect(() => {
-    const getPost = async() => {
+    const getPosts = async() => {
       const response = await fetch(`https://jsonplaceholder.typicode.com/posts?_limit=${localOrStateNum}`);
       // data est égal à PostData
       const data:PostData[] = await response.json();
@@ -22,7 +22,7 @@ const Posts: React.FC = () => {
       // Ca évite les erreurs
       setAllPosts(data);
     }
-    getPost();
+    getPosts();
     // numberOfPosts est à la fin pour afficher le nombres de posts souhaité
   }, [localOrStateNum]);
 
